@@ -1,7 +1,7 @@
-﻿using Account.Ledger.Api.Models;
-using Account.Ledger.Api.Models.Constants;
+﻿using Account.Ledger.Api.Models.Constants;
 using Account.Ledger.Api.Models.DTOs;
 using Account.Ledger.Api.Models.Entities;
+using Account.Ledger.Api.Models.Exceptions;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 
@@ -23,20 +23,20 @@ namespace Account.Ledger.Api.Extensions
         }
 
         static async Task PostTransactionsByAccount(
-            [FromHeader(Name = "Account")] Guid accountId,
+            [FromHeader(Name = "account")] Guid accountId,
             TransactionRequest transactionRequest,
             IMapper mapper)
         {
             if (accountId == null || accountId == Guid.Empty)
             {
-                TypedResults.BadRequest(new BaseResponse<object>(["missing transaction account..."]));
+                throw new BadRequestException("missing transaction account...");
             }
 
             var transaction = mapper.Map<Transaction>(transactionRequest, opt => opt.Items[AccountLedgerConstants.ACCOUNT_ITEM] = accountId);
 
             if (transaction.EntityValidation())
             {
-                TypedResults.UnprocessableEntity(new BaseResponse<object>(["invalid entity..."]));
+                throw new UnprocessableEntityExcpetion("invalid entity...");
             };
 
             throw new NotImplementedException();
