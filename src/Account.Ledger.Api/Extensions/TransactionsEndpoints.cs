@@ -3,6 +3,7 @@ using Account.Ledger.Api.Models.DTOs;
 using Account.Ledger.Api.Models.Entities;
 using Account.Ledger.Api.Models.Exceptions;
 using AutoMapper;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Account.Ledger.Api.Extensions
@@ -22,7 +23,7 @@ namespace Account.Ledger.Api.Extensions
             //transactionBase.MapGet($"{ACCOUNT_BASE_ENDPOINT}/{{accountId}}", GetAccount);
         }
 
-        static async Task PostTransactionsByAccount(
+        static async Task<Ok<Guid>> PostTransactionsByAccount(
             [FromHeader(Name = "account")] Guid accountId,
             TransactionRequest transactionRequest,
             IMapper mapper)
@@ -34,12 +35,14 @@ namespace Account.Ledger.Api.Extensions
 
             var transaction = mapper.Map<Transaction>(transactionRequest, opt => opt.Items[AccountLedgerConstants.ACCOUNT_ITEM] = accountId);
 
-            if (transaction.EntityValidation())
+            if (!transaction.EntityValidation())
             {
                 throw new UnprocessableEntityExcpetion("invalid entity...");
             };
 
-            throw new NotImplementedException();
+
+
+            return TypedResults.Ok(transaction.Id);
         }
     }
 }

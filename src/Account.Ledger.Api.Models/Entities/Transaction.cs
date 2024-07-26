@@ -1,11 +1,13 @@
-﻿namespace Account.Ledger.Api.Models.Entities
+﻿using Account.Ledger.Api.Models.Constants;
+
+namespace Account.Ledger.Api.Models.Entities
 {
     public class Transaction : Entity
     {
         public string AccountId { get; set; }
         public DateTime Date { get; }
         public int Amount { get; set; }
-        public TransactionType TransactionType { get; set; }
+        public char Type { get; set; }
 
         public Transaction()
         {
@@ -15,6 +17,6 @@
         public override bool EntityValidation() =>
             !string.IsNullOrWhiteSpace(AccountId)
             && Amount > 0
-            && Enum.IsDefined(typeof(TransactionType), TransactionType);
+            && AccountLedgerConstants.TransactionsTypes.Contains(Type);
     }
 }

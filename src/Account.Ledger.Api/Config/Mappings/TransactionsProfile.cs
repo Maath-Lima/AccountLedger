@@ -12,7 +12,7 @@ namespace Account.Ledger.Api.Config.Mappings
             CreateMap<TransactionRequest, Transaction>()
                 .ForMember(dest => dest.AccountId, opt => opt.MapFrom((src, dest, destMember, context) => context.Items[AccountLedgerConstants.ACCOUNT_ITEM]))
                 .ForMember(dest => dest.Amount, opt => opt.MapFrom(src => src.Value))
-                .ForMember(dest => dest.TransactionType, opt => opt.MapFrom(src => src.Type));
+                .ForMember(dest => dest.Type, opt => opt.MapFrom(src => src.Type));
         }
     }
 }
