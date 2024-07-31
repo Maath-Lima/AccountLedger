@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34902.65
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Account.Ledger.Api", "src\Account.Ledger.Api\Account.Ledger.Api.csproj", "{4DE6F920-1832-47FD-9CB5-D6C8CE59C57B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Account.Ledger.Api", "src\Account.Ledger.Api\Account.Ledger.Api.csproj", "{4DE6F920-1832-47FD-9CB5-D6C8CE59C57B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Account.Ledger.Api.Models", "src\Account.Ledger.Api.Models\Account.Ledger.Api.Models.csproj", "{B34DFB99-FA48-46BC-865E-63911EE07759}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Account.Ledger.Api.Models", "src\Account.Ledger.Api.Models\Account.Ledger.Api.Models.csproj", "{B34DFB99-FA48-46BC-865E-63911EE07759}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Account.Ledger.Functions", "src\Account.Ledger.Functions\Account.Ledger.Functions.csproj", "{36B5D86C-E54F-4648-87AE-56F121E94025}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{B34DFB99-FA48-46BC-865E-63911EE07759}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B34DFB99-FA48-46BC-865E-63911EE07759}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B34DFB99-FA48-46BC-865E-63911EE07759}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36B5D86C-E54F-4648-87AE-56F121E94025}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36B5D86C-E54F-4648-87AE-56F121E94025}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36B5D86C-E54F-4648-87AE-56F121E94025}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36B5D86C-E54F-4648-87AE-56F121E94025}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

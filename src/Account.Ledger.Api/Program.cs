@@ -20,3 +20,14 @@ app.UseExceptionHandler();
 app.RegisterTransactionsEndpoints();
 
 app.Run();
+
+
+//using Microsoft.Azure.WebJobs;
+
+//namespace Account.Ledger.Functions.Functions
+//{
+//    public static class TransactionsFunctions
+//    {
+//        [FunctionName("account-balance-updater")]
+//    }
+//}
