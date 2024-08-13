@@ -6,9 +6,10 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddAutoMapper(typeof(TransactionsProfile));
 
-builder.Services.AddExceptionHandler<BadRequestExceptionHandler>();
-builder.Services.AddExceptionHandler<UnprocessableEntityExceptionHandler>();
-builder.Services.AddExceptionHandler<GlobalExceptionMiddleware>();
+builder.Services.AddExceptionHandler<BadRequestExceptionHandler>()
+                .AddExceptionHandler<UnprocessableEntityExceptionHandler>()
+                .AddExceptionHandler<ApiExceptionHandler>()
+                .AddExceptionHandler<GlobalExceptionMiddleware>();
 
 builder.Services.AddProblemDetails();
 

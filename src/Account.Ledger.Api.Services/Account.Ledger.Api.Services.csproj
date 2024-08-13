@@ -6,4 +6,12 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="RestEase" Version="1.6.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Account.Ledger.Api.Models\Account.Ledger.Api.Models.csproj" />
+  </ItemGroup>
+
 </Project>

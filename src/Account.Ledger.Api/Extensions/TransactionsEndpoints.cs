@@ -40,8 +40,6 @@ namespace Account.Ledger.Api.Extensions
                 throw new UnprocessableEntityExcpetion("invalid entity...");
             };
 
-
-
             return TypedResults.Ok(transaction.Id);
         }
     }
