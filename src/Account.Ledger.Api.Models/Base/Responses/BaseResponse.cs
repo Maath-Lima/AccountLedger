@@ -2,11 +2,11 @@
 
 namespace Account.Ledger.Api.Models.Base.Responses
 {
-    public abstract class BaseResponse
+    public class BaseResponse
     {
         public string TraceId { get; set; }
 
-        public int StatusCode { get; set; };
+        public int StatusCode { get; set; }
 
         public BaseResponse()
         {

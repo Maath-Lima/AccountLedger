@@ -15,6 +15,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Account.Ledger.Api.Models\Account.Ledger.Api.Models.csproj" />
+    <ProjectReference Include="..\Account.Ledger.Api.Services\Account.Ledger.Api.Services.csproj" />
   </ItemGroup>
 
 </Project>

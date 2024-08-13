@@ -14,7 +14,6 @@ namespace Account.Ledger.Functions
         {
             // Treat request;
 
-
             return new OkObjectResult("Function triggred!!!");
         }
     }

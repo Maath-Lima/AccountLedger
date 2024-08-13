@@ -22,7 +22,10 @@ namespace Account.Ledger.Api.Services
                 await HandleUnsuccessfulResponseAsync(response);
             }
 
-            return default;
+            return new BaseResponse()
+            {
+                StatusCode = (int)response.StatusCode,
+            };
         }
     }
 }
