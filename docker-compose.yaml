@@ -1,9 +1,18 @@
 version: '1'
 services:
-
     local.storage.emulator:
         image: "mcr.microsoft.com/azure-storage/azurite:latest"
         container_name: local.storage.emulator
         ports:
             - 10000:10000
             - 10001:10001
+
+    local.functions:
+        container_name: local.functions
+        build:
+            context: ./src/Account.Ledger.Functions
+            dockerfile: Dockerfile
+        ports:
+            - 8080:80
+        depends_on:
+            - local.storage.emulator

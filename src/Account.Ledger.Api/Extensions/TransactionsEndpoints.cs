@@ -2,9 +2,11 @@
 using Account.Ledger.Api.Models.DTOs;
 using Account.Ledger.Api.Models.Entities;
 using Account.Ledger.Api.Models.Exceptions;
+using Account.Ledger.Api.Services.Interfaces;
 using AutoMapper;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
+using System.Diagnostics;
 
 namespace Account.Ledger.Api.Extensions
 {
@@ -26,7 +28,8 @@ namespace Account.Ledger.Api.Extensions
         static async Task<Ok<Guid>> PostTransactionsByAccount(
             [FromHeader(Name = "account")] Guid accountId,
             TransactionRequest transactionRequest,
-            IMapper mapper)
+            IMapper mapper,
+            IAccountBalanceServices accountBalanceServices)
         {
             if (accountId == null || accountId == Guid.Empty)
             {
@@ -39,6 +42,8 @@ namespace Account.Ledger.Api.Extensions
             {
                 throw new UnprocessableEntityExcpetion("invalid entity...");
             };
+
+            var response = await accountBalanceServices.TriggerBalanceUpdateAsync();
 
             return TypedResults.Ok(transaction.Id);
         }

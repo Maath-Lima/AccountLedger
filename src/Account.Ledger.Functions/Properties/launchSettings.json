@@ -1,0 +1,13 @@
+{
+  "profiles": {
+    "Account.Ledger.Functions": {
+      "commandName": "Project"
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker",
+      "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}",
+      "httpPort": 30970,
+      "useSSL": false
+    }
+  }
+}

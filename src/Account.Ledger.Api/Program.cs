@@ -11,6 +11,9 @@ builder.Services.AddExceptionHandler<BadRequestExceptionHandler>()
                 .AddExceptionHandler<ApiExceptionHandler>()
                 .AddExceptionHandler<GlobalExceptionMiddleware>();
 
+IConfiguration configuration = builder.Configuration;
+
+builder.Services.RegisterServiceCollection(configuration);
 builder.Services.AddProblemDetails();
 
 var app = builder.Build();

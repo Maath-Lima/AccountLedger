@@ -13,7 +13,7 @@ namespace Account.Ledger.Api.Middlewares
             var problemDetails = new ProblemDetails()
             {
                 Status = (int)apiException.StatusCode,
-                Title = "some serious server problem on their side...",
+                Title = "some serious server problem on external side...",
                 Detail = apiException.Message
             };
 
