@@ -483,3 +483,4 @@ $RECYCLE.BIN/
 # Vim temporary swap files
 *.swp
 /src/Account.Ledger.Functions/local.settings.json
+/src/Account.Ledger.Jobs/local.settings.json

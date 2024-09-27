@@ -1,14 +1,14 @@
 {
   "version": "2.0",
-  "logging": {
-    "logLevel": {
-      "default": "None"
-    },
-    "applicationInsights": {
-      "samplingSettings": {
-        "isEnabled": true,
-        "excludedTypes": "Request"
-      }
+  "applicationInsights": {
+    "samplingSettings": {
+      "isEnabled": true,
+      "excludedTypes": "Request"
+    }
+  },
+  "Serilog": {
+    "MinimumLevel": {
+      "Default": "Information"
     }
   }
 }

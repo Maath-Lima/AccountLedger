@@ -3,7 +3,6 @@ using Microsoft.Extensions.DependencyInjection;
 using Serilog;
 
 [assembly: FunctionsStartup(typeof(Account.Ledger.Functions.Startup))]
-
 namespace Account.Ledger.Functions
 {
     public class Startup : FunctionsStartup
@@ -12,7 +11,9 @@ namespace Account.Ledger.Functions
         {
             builder.Services.AddLogging(loggingBuilder =>
             {
-                loggingBuilder.;
+                loggingBuilder.AddSerilog(new LoggerConfiguration()
+                    .WriteTo.Console()
+                    .CreateLogger());
             });
         }
     }

@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Account.Ledger.Api.Models",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Account.Ledger.Functions", "src\Account.Ledger.Functions\Account.Ledger.Functions.csproj", "{36B5D86C-E54F-4648-87AE-56F121E94025}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Account.Ledger.Api.Services", "src\Account.Ledger.Api.Services\Account.Ledger.Api.Services.csproj", "{F1B73344-91BB-4505-B6AC-FF02C9B75E53}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Account.Ledger.Api.Services", "src\Account.Ledger.Api.Services\Account.Ledger.Api.Services.csproj", "{F1B73344-91BB-4505-B6AC-FF02C9B75E53}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Account.Ledger.Jobs", "src\Account.Ledger.Jobs\Account.Ledger.Jobs.csproj", "{D9DE27E0-529F-418F-B569-BAB7D5EC5585}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{F1B73344-91BB-4505-B6AC-FF02C9B75E53}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F1B73344-91BB-4505-B6AC-FF02C9B75E53}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F1B73344-91BB-4505-B6AC-FF02C9B75E53}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D9DE27E0-529F-418F-B569-BAB7D5EC5585}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9DE27E0-529F-418F-B569-BAB7D5EC5585}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9DE27E0-529F-418F-B569-BAB7D5EC5585}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9DE27E0-529F-418F-B569-BAB7D5EC5585}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
