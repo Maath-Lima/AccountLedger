@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Extensions.Http;
+using Serilog;
 using System.Threading.Tasks;
 
 namespace Account.Ledger.Functions
@@ -10,10 +11,10 @@ namespace Account.Ledger.Functions
     {
         [FunctionName("account-balance-updater")]
         public static async Task<IActionResult> Run(
-            [HttpTrigger(AuthorizationLevel.Anonymous, "post", Route = "account-balance-updater")] HttpRequest request)
+            [HttpTrigger(AuthorizationLevel.Anonymous, "post", Route = "account-balance-updater")] HttpRequest req,
+            ILogger logger)
         {
-            // Treat request;
-
+            logger.Information("Log Test");
             return new OkObjectResult("Function triggred!!!");
         }
     }
